@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="http://">
+
+  <rdf:Description rdf:about="http://vert/1">
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/2">
+        <ns0:link rdf:resource="http://vert/1"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/3">
+        <ns0:link rdf:resource="http://vert/1"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/4">
+        <ns0:link rdf:resource="http://vert/1"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/5">
+        <ns0:link rdf:resource="http://vert/1"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link rdf:resource="http://vert/6"/>
+    <ns0:link rdf:resource="http://vert/7"/>
+    <ns0:link rdf:resource="http://vert/10"/>
+    <ns0:scoreiter1>0.001</ns0:scoreiter1>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://vert/6">
+    <ns0:link rdf:resource="http://vert/1"/>
+    <ns0:link rdf:resource="http://vert/7"/>
+    <ns0:scoreiter1>0.001</ns0:scoreiter1>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://vert/7">
+    <ns0:link rdf:resource="http://vert/6"/>
+    <ns0:link rdf:resource="http://vert/1"/>
+    <ns0:scoreiter1>0.001</ns0:scoreiter1>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://vert/10">
+    <ns0:link rdf:resource="http://vert/1"/>
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/11">
+        <ns0:link rdf:resource="http://vert/10"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/12">
+        <ns0:link rdf:resource="http://vert/10"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/13">
+        <ns0:link rdf:resource="http://vert/10"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/14">
+        <ns0:link rdf:resource="http://vert/10"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:link>
+      <rdf:Description rdf:about="http://vert/15">
+        <ns0:link rdf:resource="http://vert/10"/>
+        <ns0:scoreiter1>0.001</ns0:scoreiter1>
+      </rdf:Description>
+    </ns0:link>
+
+    <ns0:scoreiter1>0.001</ns0:scoreiter1>
+  </rdf:Description>
+
+</rdf:RDF>

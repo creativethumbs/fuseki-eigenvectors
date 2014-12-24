@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="src"/>
+    <variable name="totalScore"/>
+  </head>
+  <results>
+    <result>
+      <binding name="src">
+        <uri>http://vert/10</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.006e0</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/1</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.007e0</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/6</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.002e0</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/12</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/7</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.002e0</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/14</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/5</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/13</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/3</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/2</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/11</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/4</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+    <result>
+      <binding name="src">
+        <uri>http://vert/15</uri>
+      </binding>
+      <binding name="totalScore">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#double">0.001</literal>
+      </binding>
+    </result>
+  </results>
+</sparql>

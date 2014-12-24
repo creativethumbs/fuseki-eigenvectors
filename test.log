@@ -1,0 +1,5 @@
+21:16:55 INFO  Dataset: in-memory
+21:16:55 INFO  Dataset path = /ds
+21:16:55 INFO  Fuseki 1.1.1 2014-10-02T16:36:17+0100
+21:16:55 INFO  Started 2014/12/23 21:16:55 EST on port 3030
+21:16:55 ERROR SPARQLServer: Failed to start server: Address already in use
