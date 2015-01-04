@@ -1,14 +1,27 @@
 #!/bin/bash
+#PBS -l ncpus=32
+#ncpus must be a multiple of 16
+#PBS -l walltime=60:00                  
+#PBS -j oe
+#PBS -q batch
 
 #this code has to be executed in the fuseki folder?
 
+set echo
+
+ja 
+
+mydir="${HOME}"
+
+cp testdata.rdf $SCRATCH_RAMDISK
+
+#move to the Apache Fuseki directory
+cd /usr/local/packages/apache-jena/jena-fuseki-0.2.5
 
 echo Running program...
 
-mydir="${HOME}/Desktop"
-
 #startup server in background
-./fuseki-server --update --mem /ds &
+env JVM_ARGS='-Xmx4800M -XX:ParallelGCThreads=16' ./fuseki-server --update --mem /ds &
 pid=$!
 echo $pid
 
@@ -17,7 +30,7 @@ sleep 10
 
 date1=$(date +"%s")
 
-./s-put http://localhost:3030/ds/data default testdata.rdf
+env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-put http://localhost:3030/ds/data default ${SCRATCH_RAMDISK}/testdata.rdf
 
 OUTPUT=''
 
@@ -47,7 +60,7 @@ MVM() {
 
     local VECTORSUM=0
 
-    ./s-query --service http://localhost:3030/ds/query "$SUMOFSCORES" --output=xml > $tempfile
+    env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-query --service http://localhost:3030/ds/query "$SUMOFSCORES" --output=xml > $tempfile
     
     #array of vector names to insert
     local v=$(awk -F '[<>]' '/uri/{print $3}' $tempfile)
@@ -69,10 +82,10 @@ MVM() {
     done
     #echo $UPDATESTRING
 
-    ./s-update --service http://localhost:3030/ds/update "$UPDATESTRING"
+    env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-update --service http://localhost:3030/ds/update "$UPDATESTRING"
 
-    ./s-query --service http://localhost:3030/ds/query "$SUMOFSQUARES" --output=xml > $tempfile
-
+    env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-query --service http://localhost:3030/ds/query "$SUMOFSQUARES" --output=xml > $tempfile
+    
     local SUMSQUARE=$(awk -F '[<>]' '/literal/{print $3}' $tempfile)
     #removes scientific notation
     SUMSQUARE=$(echo $SUMSQUARE | awk '{ print sprintf("%.20f", $1); }')
@@ -80,7 +93,7 @@ MVM() {
     local VECTORSUM=$(echo "sqrt($SUMSQUARE)" | bc -l)
     #echo $VECTORSUM
 
-    ./s-update --service http://localhost:3030/ds/update "$DELETESCORES"
+    env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-update --service http://localhost:3030/ds/update "$DELETESCORES"
 
     local INSERTSTRING=''
     for i in "${!INS_VECTORS[@]}"; do
@@ -97,7 +110,7 @@ MVM() {
         OUTPUT+=${INS_VECTORS[$i]}', '"$1"', '$NEWSCORE'\n'
     done
 
-    ./s-update --service http://localhost:3030/ds/update "$INSERTSTRING"
+    env JVM_ARGS='-XX:ParallelGCThreads=16' ./s-update --service http://localhost:3030/ds/update "$INSERTSTRING"
 }   
 
 ITERNO=1
@@ -105,7 +118,6 @@ ITERNO=1
 while [ $ITERNO -lt 50 ]; do
     ITERNO=$[$ITERNO+1]
     MVM $ITERNO $[ITERNO-1] 
-    echo "done with iter "$ITERNO
 done
 
 resultfile=$mydir/eigenresult.txt
@@ -123,3 +135,4 @@ kill $pid
 
 wait
 
+ja -chlst
