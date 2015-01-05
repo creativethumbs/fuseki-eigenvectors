@@ -6,6 +6,6 @@ Output: TXT file containing the eigenvalues for each node
 
 Run ./eigentest-bash.sh
 
-The code takes about 2 minutes to run.
+The code takes about 25 seconds to run.
 
 Note: temp.xml stores intermediate results
